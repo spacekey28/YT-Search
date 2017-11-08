@@ -1,0 +1,13 @@
+$body-bgcolor: black;
+$body-color: white;
+
+$align-center: center;
+
+body {
+  background-color: $body-bgcolor;
+  color: $body-color;
+}
+
+#root {
+  text-align: $align-center;
+}
