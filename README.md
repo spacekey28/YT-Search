@@ -5,8 +5,10 @@ Webpack, npm, ReactJs, Youtube Data API v3, Bootstrap_v4, Sass
 
 Checkout this repo, install dependencies, then start the webpack-dev-server with the following:
 
-```git clone https://github.com/jazzed28/YT-Search.git
+```
+git clone https://github.com/jazzed28/YT-Search.git
 cd yt-search
 npm install
 npm run build
-npm run start```
+npm run start
+```
