@@ -1,6 +1,24 @@
 body {
-  background-color: black;
-  color: white; }
+  background-color: white;
+  color: black; }
 
-#root {
-  text-align: center; }
+.search-bar {
+  margin: 20px auto;
+  width: 75%; }
+
+.input-group-btn {
+  cursor: pointer; }
+
+.video-item img {
+  max-width: 64px; }
+
+.video-detail .details {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+
+.list-group-item {
+  cursor: pointer; }
+  .list-group-item:hover {
+    background-color: #eee; }

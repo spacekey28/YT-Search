@@ -4,21 +4,33 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: '' };
+    this.state = { term: '',
+                  clicked: false };
   }
   render() {
+    const classes1 = `input-group search-bar`;
+    const classes2 = `btn btn-secondary`;
     return (
-      <div className="search-bar">
+      <div className={classes1}>
         <input
+          type="text"
+          className="form-control"
+          placeholder="Search for..."
+          aria-label="Search for..."
           value={this.state.term}
-          onChange={event => this.onInputChange(event.target.value)} />
+          onChange = {event => this.onInputChange(event.target.value)} />
+          <span className="input-group-btn">
+            <button className={classes2} onClick={event => this.onClickButton(this.state.term)} type="button">Go!</button>
+          </span>
       </div>
     );
   }
 
   onInputChange(term) {
     this.setState({term});
-    this.props.onSearchTermChange(term);
+  }
+  onClickButton(type) {
+    this.props.onSearchTermClick(type);
   }
 }
 
