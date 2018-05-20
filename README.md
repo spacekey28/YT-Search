@@ -12,6 +12,5 @@ Checkout this repo, install dependencies, then start the webpack-dev-server with
 git clone https://github.com/jazzed28/YT-Search.git
 cd yt-search
 npm install
-npm run build
 npm run start
 ```
