@@ -1,13 +1,10 @@
 body {
   background-color: white;
-  color: black; }
+  color: #111111; }
 
 .search-bar {
   margin: 20px auto;
   width: 75%; }
-
-.input-group-btn {
-  cursor: pointer; }
 
 .video-item img {
   max-width: 64px; }
@@ -15,10 +12,35 @@ body {
 .video-detail .details {
   margin-top: 10px;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px; }
+  border: 1px solid #eee;
+  border-radius: .25rem; }
 
 .list-group-item {
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid #eee; }
   .list-group-item:hover {
     background-color: #eee; }
+
+.input-group-btn button {
+  cursor: pointer; }
+
+.media-heading {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px; }
+
+.media-body {
+  padding: 0 20px; }
+
+.details-title {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px; }
+
+.details-description {
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 13px;
+  line-height: 18px; }
+
