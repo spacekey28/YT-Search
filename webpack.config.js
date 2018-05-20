@@ -1,8 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin'); since webpack 4 it's deprecated. MiniCssExtractPlugin instead.
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
 let config = {
@@ -24,13 +22,6 @@ let config = {
         exclude: /node_modules/,
         loader: "babel-loader"
       },
-      // {
-      //   test: /\.scss$/,
-      //   use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-      //     fallback: 'style-loader',
-      //     use: ['css-loader', 'sass-loader', 'postcss-loader']
-      //   }))
-      // },
       {
         test: /\.scss$/,
         use: [
@@ -72,7 +63,6 @@ let config = {
     ]
   },
   plugins: [
-    // new ExtractTextWebpackPlugin('styles.css')
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
@@ -92,7 +82,6 @@ module.exports = config;
 
 // if (process.env.NODE_ENV === 'production') {
 //   module.exports.plugins.push(
-//     new webpack.optimize.UglifyJsPlugin(),
-//     //new OptimizeCSSAssets()
+//     new OptimizeCSSAssets()
 //   );
 // }
