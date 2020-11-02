@@ -11,9 +11,9 @@ let config = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'],
-    alias: {
-      images: path.resolve(__dirname, 'src/assets/images')
-    }
+    // alias: {
+    //   images: path.resolve(__dirname, 'src/assets/images')
+    // }
   },
   module: {
     rules: [
@@ -37,29 +37,29 @@ let config = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]', {
-          loader: 'image-webpack-loader',
-          query: {
-            mozjpeg: {
-              progressive: true,
-            },
-            gifsicle: {
-              interlaced: false,
-            },
-            optipng: {
-              optimizationLevel: 4,
-            },
-            pngquant: {
-              quality: '75-90',
-              speed: 3,
-            }
-          }
-        }],
-        exclude: /node_modules/,
-        include: __dirname
-      }
+      // {
+      //   test: /\.(jpe?g|png|gif|svg)$/i,
+      //   loaders: ['file-loader?context=src/assets/images/&name=images/[path][name].[ext]', {
+      //     loader: 'image-webpack-loader',
+      //     options: {
+      //       mozjpeg: {
+      //         progressive: true,
+      //       },
+      //       gifsicle: {
+      //         interlaced: false,
+      //       },
+      //       optipng: {
+      //         optimizationLevel: 4,
+      //       },
+      //       pngquant: {
+      //         quality: '75-90',
+      //         speed: 3,
+      //       }
+      //     }
+      //   }],
+      //   exclude: /node_modules/,
+      //   include: __dirname
+      // }
     ]
   },
   plugins: [
