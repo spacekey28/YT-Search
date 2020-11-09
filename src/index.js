@@ -27,7 +27,7 @@ class App extends Component {
       "part": [
         "snippet"
       ],
-      "q": "psy",
+      "q": term,
       "type": [
         "video"
       ]
