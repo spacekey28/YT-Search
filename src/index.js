@@ -7,8 +7,9 @@ import SearchBar from './components/search_bar';
 import searchYoutube from 'youtube-api-v3-search';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import config from '../config';
 
-const API_KEY = 'AIzaSyCKPhps5cIgiq9vRCPZDKbbNoHpU-HarcY';
+const API_KEY = config.YOUTUBE_V3_API_KEY;
 
 class App extends Component {
   constructor(props) {
@@ -21,25 +22,19 @@ class App extends Component {
 
     this.videoSearch('psy');
   }
-
-  videoSearch(term) {
-    let options = {
-      "part": [
-        "snippet"
-      ],
-      "q": term,
-      "type": [
-        "video"
-      ]
+  async videoSearch(term) {
+    const options = {
+      q: term,
+      part:'snippet',
+      type:'video',
     }
-    searchYoutube(API_KEY, options);
-    // searchYoutube(API_KEY, options, (videos) => {
-    //   console.log("VV: ", videos);
-    //   this.setState({
-    //     videos: videos,
-    //     selectedVideo: videos[0]
-    //   });
-    // });
+    let result = await searchYoutube(API_KEY, options);
+
+    console.log("VV: ", result);
+    this.setState({
+      videos: result.items,
+      selectedVideo: result.items[0]
+    });
   }
 
   render() {
