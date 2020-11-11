@@ -18,7 +18,8 @@ class SearchBar extends Component {
           placeholder="Search for..."
           aria-label="Search for..."
           value={this.state.term}
-          onChange = {event => this.onInputChange(event.target.value)} />
+          onChange = {event => this.onInputChange(event.target.value)}
+          onKeyDown = {event => this.onKeyDown(event)} />
           <span className="input-group-btn">
             <button className={classes2} onClick={event => this.onClickButton(this.state.term)} type="button">Go!</button>
           </span>
@@ -28,6 +29,9 @@ class SearchBar extends Component {
 
   onInputChange(term) {
     this.setState({term});
+  }
+  onKeyDown(event) {
+    if (event.key === 'Enter') this.props.onSearchTermClick(event.target.value);
   }
   onClickButton(type) {
     this.props.onSearchTermClick(type);
