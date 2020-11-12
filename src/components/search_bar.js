@@ -21,7 +21,7 @@ class SearchBar extends Component {
           onChange = {event => this.onInputChange(event.target.value)}
           onKeyDown = {event => this.onKeyDown(event)} />
           <span className="input-group-btn">
-            <button className={classes2} onClick={event => this.onClickButton(this.state.term)} type="button">Go!</button>
+            <button className={classes2} onClick={event => this.onClickButton(this.state.term)} type="button">Search</button>
           </span>
       </div>
     );
